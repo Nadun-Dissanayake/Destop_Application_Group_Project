@@ -1,0 +1,209 @@
+﻿<UserControl x:Class="Student_Management_System.Views.Analytics"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:vm="clr-namespace:Student_Management_System.ViewModel"
+             xmlns:local="clr-namespace:Student_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600"
+             d:DesignWidth="622"
+             Style="{StaticResource Page_Style}"
+             Background="Transparent">
+
+    <UserControl.DataContext>
+        <vm:AnalyticsVM/>
+    </UserControl.DataContext>
+
+    <Grid Width="624" Height="600">
+        <Border CornerRadius="0 32 32 0">
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/1.jpg"
+                        Stretch="None"/>
+            </Border.Background>
+            <Border CornerRadius="0 25 25 0"
+                    BorderBrush="Black"
+                Opacity="0.85" Margin="-2,0,2,0">
+                
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                        <GradientStop Color="#4a5159" Offset="0"/>
+                        <GradientStop Color="#0f1112" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Border>
+        <Border CornerRadius="0,25,25,0">
+            <Grid Margin="15">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Text="Enter the Reg No" Margin="15" FontSize="30" Foreground="White" />
+                        <TextBox Foreground="White" Text="{Binding Index}" Width="200" Height="30" Margin="10,0" Background="Transparent" BorderThickness="0 0 0 2" FontSize="22"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="EE3305 Signals and systems" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3305}" Margin="156 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="EE3302 Data Structures and Algorithms" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3302}" Margin="56 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="EE3301 Analog Electronics" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3301}" Margin="170 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="EE3250 Gui Programming" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Is3307}" Margin="176 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="EE3251 Programming Project" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3250}" Margin="145 0" SelectionChanged="ComboBox_SelectionChanged">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="IS3302 Complex Analysis and Transform" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Is3302}" Margin="52 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="IS3301 Basic Econimics" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3203}" Margin="202 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Margin="0,10">
+                        <TextBlock Text="IS3307 Society for Engineers" Margin= "15,0" FontSize="20" Foreground="#b0b9c6"/>
+                        <ComboBox Width="50" Text="{Binding Ee3251}" Margin="153 0">
+                            <ComboBoxItem Content="A+"/>
+                            <ComboBoxItem Content="A"/>
+                            <ComboBoxItem Content="A-"/>
+                            <ComboBoxItem Content="B+"/>
+                            <ComboBoxItem Content="B"/>
+                            <ComboBoxItem Content="B-"/>
+                            <ComboBoxItem Content="C+"/>
+                            <ComboBoxItem Content="C"/>
+                            <ComboBoxItem Content="C-"/>
+                            <ComboBoxItem Content="E"/>
+                        </ComboBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <Button Width="600" Height="50" Margin="8 20" Content="Save" Command="{Binding saveCommand}"
+                                VerticalAlignment="Center" Foreground="Black"
+                                FontSize="20" FontWeight="Bold">
+                            
+
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Background" Value="DarkCyan"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="#164DFF"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Button.Style>
+
+                            <Button.Template>
+                                <ControlTemplate TargetType="Button">
+                                    <Border Width="200" Height="40"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Button.Template>
+
+                        </Button>
+                    </StackPanel>
+                    
+                    
+                </StackPanel>
+                
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

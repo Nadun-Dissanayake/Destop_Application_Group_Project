@@ -1,0 +1,20 @@
+﻿Student Management System
+1.0.0.0
+
+winexe
+C#
+.cs
+C:\Users\ASUS\Desktop\Adding Student Part Done 05_updated\Adding Student Part Done 05\Student Management System\obj\Debug\net6.0-windows\
+Student_Management_System
+none
+false
+TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+C:\Users\ASUS\Desktop\Adding Student Part Done 05_updated\Adding Student Part Done 05\Student Management System\App.xaml
+19845220519
+3-1188085419
+42-1389471957
+213160795227
+AdminWindow.xaml;HeadWindow.xaml;MainWindow.xaml;Styles\Button.xaml;Styles\Image.xaml;Styles\Page.xaml;Styles\Text.xaml;UserWindow.xaml;Utilities\DataTemplate.xaml;Views\AddAdminWindow.xaml;Views\Analytics.xaml;Views\Dashboard.xaml;Views\NewStudent.xaml;Views\PasswordBox.xaml;Views\ShowResults.xaml;Views\StudentResults.xaml;Views\Students.xaml;Views\UpdateResultWindow.xaml;Views\UpdateWindow.xaml;
+
+False
+

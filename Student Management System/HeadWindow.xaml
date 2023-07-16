@@ -1,0 +1,166 @@
+﻿<Window x:Class="Student_Management_System.HeadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_Management_System"
+        mc:Ignorable="d"
+        Title="HeadWindow" 
+        Height="500" 
+        Width="450"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        >
+    <Grid>
+        <Border CornerRadius="25">
+            <Border.Background >
+                <ImageBrush ImageSource="/Images/home_page.png"
+                        Stretch="None"/>
+            </Border.Background>
+            <Border CornerRadius="25"
+                BorderThickness="1"
+                Opacity="0.85" Margin="-2,0,2,0">
+                
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                        <GradientStop Color="#4a5159" Offset="0"/>
+                        <GradientStop Color="#0f1112" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Border>
+        <StackPanel>
+            
+            <Button Content="Click to See Students" Height="50" Click="Button_Click" Margin="0 20 0 0" Width="400" FontSize="20">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00FFFF"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#164DFF"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Width="200" Height="40"                                
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+        <StackPanel Margin="20 60">
+            <ListView Background="Transparent"  Name="ItemList"  Margin="5,20,5,0" Height="300" Width="300" SelectedItem="{Binding P1,UpdateSourceTrigger=PropertyChanged}">
+                <ListView.ItemContainerStyle >
+                    <Style TargetType="ListViewItem">
+                        <Setter Property="Background" Value="Transparent"/>
+                        <Setter Property="BorderBrush" Value="Gray"/>
+                        <Setter Property="BorderThickness" Value="1"/>
+                        <Setter Property="Margin" Value="3"/>
+                        <Setter Property="Foreground" Value="White"/>
+                        <Setter Property="Height" Value="40"/>
+                        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                        
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Background" Value="DarkGreen"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#272B2F "/>
+                                <Setter Property="Height" Value="40"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </ListView.ItemContainerStyle>
+                <ListView.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="Clear" />
+                    </ContextMenu>
+                </ListView.ContextMenu>
+                <ListView.View>
+                    <GridView>
+                        <GridView.ColumnHeaderContainerStyle>
+                            <Style TargetType="GridViewColumnHeader">
+                                <Setter Property="Background" Value="#4a5159" />
+                                <Setter Property="Height" Value="40"/>
+                                <Setter Property="Foreground" Value="White" />
+                            </Style>
+                        </GridView.ColumnHeaderContainerStyle>
+                        
+                        <GridViewColumn Width="142" Header="Username"  DisplayMemberBinding="{Binding User_Name}"/>
+                        <GridViewColumn Width="142" Header="Password" DisplayMemberBinding="{Binding Pass}"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Height="100" VerticalAlignment="Top">
+                    <Button  Width="100" Height="30" Content="Delete" Margin="65,20,80,0" FontSize="20" Click="Delete_User">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#00FFFF"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#164DFF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border                                 
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+
+                <StackPanel Height="50" VerticalAlignment="top" HorizontalAlignment="Left">
+                    <Button Content="Add" Click="Add_Admin" Width="100" Height="30"  Margin="0,20,0,0" FontSize="20"  >
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#00FFFF"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#164DFF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                        <Button.Template>
+                            
+                            <ControlTemplate TargetType="Button">
+                                <Border 
+                                
+                                CornerRadius="10"
+                                
+                                Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+        <Button x:Name="CloseApp"
+                Style="{StaticResource ExitApp}"
+                Click="CloseApp_Click" />
+        
+    </Grid>
+</Window>

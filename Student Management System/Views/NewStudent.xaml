@@ -1,0 +1,100 @@
+﻿<UserControl x:Class="Student_Management_System.Views.NewStudent"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:Student_Management_System.ViewModel"
+             xmlns:local="clr-namespace:Student_Management_System.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="600"
+             d:DesignWidth="622"
+             Style="{StaticResource Page_Style}">
+
+    <UserControl.DataContext>
+        <vm:NewStudentVm/>
+    </UserControl.DataContext>
+
+    <Grid Width="622" Height="600">
+        <Border CornerRadius="0 25 25 0">
+            <Border.Background>
+                <ImageBrush ImageSource="/Images/1.jpg"
+                        Stretch="None"/>
+            </Border.Background>
+            
+            <Border CornerRadius="0 25 25 0"
+                Opacity="0.85" Margin="-2,0,0,0">
+                <Border.Background>
+                    <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                        <GradientStop Color="#4a5159" Offset="0"/>
+                        <GradientStop Color="#0f1112" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+        </Border>
+        <StackPanel Orientation="Vertical" Margin="15">
+            <TextBlock Text="Enter the data of the new student" Foreground="White"
+                       FontSize="35" Margin="0 40 0 5"/>
+            <Separator Foreground="#b0b9c6" Margin="0 5"></Separator>
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock  Margin="5,0" Text="First Name" FontSize="25" Width="200" Foreground="White" TextAlignment="Left"/>
+                <TextBox Foreground="White" FontSize="16" Text="{Binding First_name}" Margin="10 10" Width="380" Background="Transparent" BorderThickness="0 0 0 2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="5,0" Text="Last Name" FontSize="25" Width="200" Foreground="White"/>
+                <TextBox Foreground="White" FontSize="16" Text="{Binding Last_name}"  Margin="10 10" Width="380" Background="Transparent" BorderThickness="0 0 0 2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="5,0" Text="Address" FontSize="25" Width="200" Foreground="White"/>
+                <TextBox Foreground="White" FontSize="16" Text="{Binding Address}" Margin="10 10" Width="380" Background="Transparent" BorderThickness="0 0 0 2"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="5,0" Text="Reg No" FontSize="25" Width="200" Foreground="White"/>
+                <TextBox Foreground="White" FontSize="16" Text="{Binding Regno}" Margin="10 10" Width="380" Background="Transparent" BorderThickness="0 0 0 2"/>
+            </StackPanel>
+            
+            <StackPanel Orientation="Horizontal">
+                <TextBlock  Margin="5,0" Text="Telephone No" FontSize="25" Width="200" Foreground="White"/>
+                <TextBox Foreground="White" FontSize="16" Text="{Binding Telno}" Margin="10 10" Width="380" Background="Transparent" BorderThickness="0 0 0 2"/>
+            </StackPanel>
+
+            
+
+            
+
+            <StackPanel Orientation="Horizontal"/>
+
+            <StackPanel Orientation="Horizontal">
+                <Button Width="622" Height="50" Margin="10 20" Content="Save" Command="{Binding saveCommand}"
+                        HorizontalAlignment="Center" Foreground="Black"
+                        FontWeight="Bold" FontSize="20"  >
+
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#00FFFF"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#164DFF"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Width="200" Height="40"
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </StackPanel>    
+    </Grid>
+</UserControl>

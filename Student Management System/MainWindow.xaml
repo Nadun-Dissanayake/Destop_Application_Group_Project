@@ -1,0 +1,109 @@
+﻿<Window x:Class="Student_Management_System.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Student_Management_System"
+        xmlns:v="clr-namespace:Student_Management_System.Views"
+        mc:Ignorable="d"
+        Title="LoginWindow" 
+        Height="650" 
+        Width="600" 
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <local:MainWindowMV/>
+    </Window.DataContext>
+
+    <Border CornerRadius="70" Margin="20 "  BorderThickness="5" >
+        <Border.BorderBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#24FF92" Offset="0"/>
+                <GradientStop Color="Yellow" Offset="0.5"/>
+                <GradientStop Color="Green" Offset="1"/>
+
+            </LinearGradientBrush>
+        </Border.BorderBrush>
+
+        <Border.Background>
+            <LinearGradientBrush StartPoint="0.5, 0.1" EndPoint="0.9, 0.4">
+                <GradientStop Color="#212529" Offset="0."/>
+                <GradientStop Color="DarkCyan" Offset="0.5"/>
+                <GradientStop Color="#48FF" Offset="1"/>
+
+            </LinearGradientBrush>
+          
+
+        </Border.Background>
+
+       
+
+        <StackPanel Margin="15,50,15,3" Orientation="Vertical">
+            <Label Content="ESA ACADEMY" Foreground="#99cc99" FontWeight="Bold" FontSize="28" HorizontalAlignment="Center"/>
+            <Image Source="/Images/logo.jpeg" Width="100" Height="100" HorizontalAlignment="Center"/>
+
+            <Label Content="Student Management System" Foreground="#99cc99" FontWeight="Bold" FontSize="25" HorizontalAlignment="Center"/>
+            <Label Content="Log in to your existing account" Foreground="White" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+            <Separator></Separator>
+            <Label Content="Username" Foreground="White" FontSize="20"/>
+            <TextBox Text="{Binding UserName }" x:Name="UserNameBox" BorderThickness="0 0 0 2" Background="Transparent" Foreground="White" FontSize="18"/>
+            <Label Content="Password" Foreground="White" FontSize="20"/>
+            <v:PasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" x:Name="passwordBox" BorderThickness="0 0 0 2" Foreground="White" FontSize="18" Background="Transparent"/>
+            <Button Width="200" FontSize="20" Height="40" Content="Login As User" Command="{Binding Login1Command}" Margin="10">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00b3b3"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00ffff"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseCaptured" Value="True">
+                                <Setter Property="Background" Value="#00b3b3"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border          
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Width="200" FontSize="20"
+                    Height="40" Margin="10" Content="Login As Admin" Command="{Binding Login2Command}">
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Background" Value="#00b3b3"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#00ffff"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseCaptured" Value="True">
+                                <Setter Property="Background" Value="#00b3b3"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border 
+                                CornerRadius="10"
+                                Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </StackPanel>
+    </Border>
+</Window>

@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>Student_Management_System</RootNamespace>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Font\Rubik-Medium.ttf" />
+    <None Remove="Font\Rubik-Regular.ttf" />
+    <None Remove="Images\1.jpg" />
+    <None Remove="Images\Add.png" />
+    <None Remove="Images\backgroundFinal.png" />
+    <None Remove="Images\Down.png" />
+    <None Remove="Images\home.png" />
+    <None Remove="Images\home_page.png" />
+    <None Remove="Images\login main.png" />
+    <None Remove="Images\logo.jpeg" />
+    <None Remove="Images\Result.png" />
+    <None Remove="Images\shutdown_def.png" />
+    <None Remove="Images\shutdown_mo.png" />
+    <None Remove="Images\Student.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.1.0" />
+    <PackageReference Include="Microsoft.Data.Sqlite.Core" Version="7.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="7.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Font\Rubik-Medium.ttf" />
+    <Resource Include="Font\Rubik-Regular.ttf" />
+    <Resource Include="Images\1.jpg" />
+    <Resource Include="Images\backgroundFinal.png" />
+    <Content Include="Images\home_page.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\Down.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\login main.png" />
+    <Resource Include="Images\logo.jpeg" />
+    <Resource Include="Images\Result.png" />
+    <Resource Include="Images\Student.png" />
+    <Content Include="Images\shutdown_def.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\shutdown_mo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Add.png" />
+  </ItemGroup>
+
+</Project>
